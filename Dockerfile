@@ -11,11 +11,11 @@ ENV LANG=en_US.UTF-8
 WORKDIR /root
 USER root
 
-#RUN wget https://github.com/eosio/eos/releases/download/v2.1.0/eosio_2.1.0-1-ubuntu-20.04_amd64.deb
-COPY eosio_2.1.0-1-ubuntu-20.04_amd64.deb .
+RUN wget https://github.com/eosio/eos/releases/download/v2.1.0/eosio_2.1.0-1-ubuntu-20.04_amd64.deb
+#COPY eosio_2.1.0-1-ubuntu-20.04_amd64.deb .
 RUN apt install -y ./eosio_2.1.0-1-ubuntu-20.04_amd64.deb
-#RUN wget https://github.com/eosio/eosio.cdt/releases/download/v1.7.0/eosio.cdt_1.7.0-1-ubuntu-18.04_amd64.deb
-COPY eosio.cdt_1.7.0-1-ubuntu-18.04_amd64.deb .
+RUN wget https://github.com/eosio/eosio.cdt/releases/download/v1.7.0/eosio.cdt_1.7.0-1-ubuntu-18.04_amd64.deb
+#COPY eosio.cdt_1.7.0-1-ubuntu-18.04_amd64.deb .
 RUN apt install -y ./eosio.cdt_1.7.0-1-ubuntu-18.04_amd64.deb
 
 #RUN locale-gen en_US.UTF-8  && curl -sL https://deb.nodesource.com/setup_10.x | bash -  && apt-get install -yq      nodejs  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*  && npm i -g yarn typescript
